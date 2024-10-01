@@ -1,0 +1,444 @@
+/* Import Google fonts - Playfair Display and Source Sans Pro */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0; /* Reset padding */
+    box-sizing: border-box;
+    font-family: "Source Sans Pro", sans-serif;
+    scroll-behavior: smooth;
+}
+
+#google_translate_element {
+    display: inline-block; /* Center the dropdown */
+    margin-bottom: 20px; /* Space from the contact section */
+    margin-left: 1300px;
+}
+
+.goog-te-gadget {
+    display: inline; /* Make it inline for better layout */
+}
+
+.goog-te-combo {
+    font-size: 16px; /* Adjust font size */
+    padding: 5px; /* Adjust padding */
+}
+
+/* General nav styles */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 15px;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo a {
+    font-family: "Playfair Display", sans-serif;
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+}
+
+/* Hamburger menu icon for mobile */
+.hamburger-menu {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Navigation links */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-family: "Playfair Display", sans-serif;
+    color: #333;
+    font-size: 19px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+/* Media query for phones */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block; /* Show hamburger icon */
+    }
+
+    nav ul {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #f0f4f8; /* Background */
+        width: 100%;
+        height: auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        opacity: 0; /* Start hidden */
+    }
+
+    /* When the 'show' class is added, the menu slides down */
+    nav ul.show {
+        max-height: 500px; /* Set to a height big enough to contain the menu items */
+        opacity: 1; /* Fade in */
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+        padding: 15px;
+        color: #333;
+    }
+
+    section {
+        padding: 20px 10px; /* Reduce padding for small screens */
+    }
+
+    .hero {
+        padding-top: 90px;
+        min-height: calc(100vh - 90px); /* Adjust for mobile navbar */
+    }
+
+    .hero h1 {
+        font-size: 2rem; /* Further reduce the font size on mobile */
+    }
+
+    .service-container, .project-scroll-container {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: center;
+    }
+
+    .service-item, .project-item {
+        max-width: 100%; /* Allow full-width on small screens */
+    }
+
+    .footer {
+        padding: 15px;
+        font-size: 1rem;
+    }
+    /* Positioning Google Translate Element */
+    #google_translate_element {
+        margin-left: 150px;
+        margin-bottom: -10px;
+    }
+}
+
+/* Global Section Styling */
+section {
+    min-height: 100vh; /* Full viewport height for each section */
+    padding: 60px 20px; /* Generous padding for spacing */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* HERO SECTION */
+.hero {
+    background-color: #f0f4f8;
+    padding-top: 70px; /* Adjust for the fixed navbar */
+    padding-bottom: 40px;
+    min-height: calc(100vh - 70px); /* Adjust for the height of the navbar */
+    text-align: center;
+}
+
+.contain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span {
+    color: cornflowerblue;
+    font-family: "Playfair Display", sans-serif;
+}
+
+.contain img {
+    max-width: 420px;
+    max-height: 650px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More visible shadow */
+    margin-top: 30px;
+}
+
+.contain h1 {
+    margin-left: 50px;
+    font-size: 3rem;
+    color: #333;
+    font-family: "Satoshi", serif;
+}
+
+/* Services Section */
+.services {
+    background-color: #f9f9f9; /* Light gray background for contrast */
+}
+
+.services h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+}
+
+.service-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-radius: 3px;
+}
+
+.service-item {
+    background-color: #fff; /* White background for each service item */
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More visible shadow */
+}
+
+.service-item img {
+    margin-top: 10px;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More visible shadow */
+}
+
+/* Project Section */
+.projects {
+    background-color: #f0f4f8; /* Default light background */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projects h1 {
+    margin-bottom: 20px;
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+}
+
+/* Container for horizontal scrolling */
+.project-scroll-container {
+    display: flex;
+    overflow-x: auto; /* Allows horizontal scrolling */
+    gap: 20px; /* Space between items */
+    padding: 20px;
+    scroll-behavior: smooth; /* Smooth scrolling */
+    width: 100%; /* Full width */
+}
+
+.project-item {
+    min-width: 300px; /* Minimum width of each project item */
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px 5px 0 0; /* Rounded corners on top */
+}
+
+.project-text {
+    padding: 15px;
+}
+
+.project-text h3 {
+    font-family: "Playfair Display", serif;
+    margin-bottom: 10px;
+}
+
+.project-text p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Contact Section */
+.contact {
+    background-color: #f9f9f9; /* Light gray background for contrast */
+}
+
+.contact h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+}
+
+.contact p {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.contact-details {
+    text-align: center;
+}
+
+.contact-details p {
+    margin-bottom: 10px;
+}
+
+/* Footer Section */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0.5rem 9%;
+    background: #fff;
+}
+
+.footer-text p {
+    font-size: 1.1rem;
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+    background: #f0f4f8;
+    border-radius: .5rem;
+    transition: .5s ease;
+}
+
+.footer-iconTop a:hover {
+    box-shadow: 0 0 1rem cornflowerblue;
+}
+
+.footer-iconTop a i {
+    font-size: 1.9rem;
+    color: cornflowerblue;
+}
+
+/* Media query for screens 768px and below */
+@media (max-width: 768px) {
+    /* Adjust navbar */
+    nav ul {
+        flex-direction: column; /* Stack menu items vertically */
+        gap: 10px; /* Space between items */
+        position: absolute; /* Position for dropdown effect */
+        top: 60px; /* Adjusted position */
+        right: 0; /* Align to the right */
+        background-color: #f0f4f8; /* Background color for dropdown */
+        width: 100%; /* Full width */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for dropdown */
+        max-height: 0; /* Initially hidden */
+        transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Smooth transition */
+        opacity: 0; /* Initially hidden */
+    }
+
+    nav ul.show {
+        max-height: 500px; /* Height for visible state */
+        opacity: 1; /* Show opacity */
+    }
+
+    nav ul li {
+        width: 100%; /* Full width for each menu item */
+        text-align: center; /* Center text */
+        padding: 10px 0; /* Padding for better touch targets */
+    }
+
+    nav ul li a {
+        font-size: 16px; /* Adjusted font size for links */
+        padding: 15px; /* Increased padding */
+        color: #333; /* Color for links */
+    }
+
+    section {
+        padding: 20px 10px; /* Reduced padding for small screens */
+    }
+
+    .hero {
+        padding-top: 90px; /* Adjust for fixed navbar */
+        min-height: calc(100vh - 90px); /* Ensure full height */
+    }
+
+    .contain {
+        flex-direction: column; /* Stack content */
+        text-align: center; /* Center text */
+    }
+
+    .contain h1 {
+        margin-left: 0; /* No left margin */
+        font-size: 2.5rem; /* Adjusted font size */
+    }
+
+    .contain img {
+        max-width: 300px; /* Max width for images */
+        max-height: 500px; /* Max height for images */
+    }
+
+    .service-container {
+        flex-direction: column; /* Stack services vertically */
+        align-items: center; /* Center items */
+        gap: 30px; /* Space between items */
+    }
+
+    .service-item {
+        max-width: 100%; /* Full width for service items */
+    }
+
+    .project-item {
+        min-width: 100%; /* Full width for project items */
+        margin: 10px; /* Margin for spacing */
+    }
+
+    .project-scroll-container {
+        flex-direction: row; /* Stack items vertically */
+    }
+
+    .footer {
+        flex-direction: column; /* Stack footer items */
+        text-align: center; /* Center text in footer */
+    }
+
+    .footer-text p {
+        font-size: 0.9rem; /* Smaller font size for footer text */
+    }
+    
+}
