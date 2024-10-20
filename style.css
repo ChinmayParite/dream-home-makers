@@ -11,17 +11,39 @@
 
 #google_translate_element {
     display: inline-block; /* Center the dropdown */
-    margin-bottom: 20px; /* Space from the contact section */
-    margin-left: 1300px;
+    margin-top: -20px; /* Adjust space from the contact section */
+    margin-left: 1250px; /* Remove hardcoded left margin for responsiveness */
+    text-align: center; /* Center the element */
+    padding: 10px;
 }
 
 .goog-te-gadget {
-    display: inline; /* Make it inline for better layout */
+    display: inline-flex; /* Center-align elements inside */
+    align-items: center; /* Vertically align the content */
+    background-color: #f7f9fc; /* Light background for the container */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 8px 15px; /* Padding inside the box */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.goog-te-gadget:hover {
+    background-color: #eaeff5; /* Slight hover effect */
 }
 
 .goog-te-combo {
     font-size: 16px; /* Adjust font size */
-    padding: 5px; /* Adjust padding */
+    padding: 5px; /* Add padding to dropdown */
+    border-radius: 5px; /* Rounded dropdown */
+    border: 1px solid #ccc; /* Border around the dropdown */
+    background-color: #fff; /* Background for the dropdown */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow on the dropdown */
+    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+}
+
+.goog-te-combo:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slight shadow on hover */
 }
 
 /* General nav styles */
@@ -45,11 +67,10 @@ nav {
     width: 100%;
 }
 
-.logo a {
-    font-family: "Playfair Display", sans-serif;
-    font-size: 24px;
-    color: #333;
-    text-decoration: none;
+.nav-container .logo img {
+    height: 130x;
+    width: 150px;
+    margin-left: 20px;
 }
 
 /* Hamburger menu icon for mobile */
@@ -176,7 +197,7 @@ section {
     background-color: #f0f4f8;
     padding-top: 70px; /* Adjust for the fixed navbar */
     padding-bottom: 40px;
-    min-height: calc(100vh - 70px); /* Adjust for the height of the navbar */
+    min-height: calc(100vh); /* Adjust for the height of the navbar */
     text-align: center;
 }
 
@@ -187,21 +208,21 @@ section {
 }
 
 span {
-    color: cornflowerblue;
+    color: #6495ed;
     font-family: "Playfair Display", sans-serif;
 }
 
 .contain img {
-    max-width: 420px;
-    max-height: 650px;
+    max-width: 460px;
+    max-height: 690px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More visible shadow */
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .contain h1 {
     margin-left: 50px;
-    font-size: 3rem;
+    font-size: 3.7rem;
     color: #333;
     font-family: "Satoshi", serif;
 }
@@ -245,7 +266,7 @@ span {
 
 /* Project Section */
 .projects {
-    background-color: #f0f4f8; /* Default light background */
+    background-color: #f0f4f8; /* Soft light background */
     padding: 40px;
     display: flex;
     flex-direction: column;
@@ -256,44 +277,77 @@ span {
     margin-bottom: 20px;
     font-family: "Playfair Display", serif;
     font-size: 3rem;
+    color: #333; /* Slightly darker for better contrast */
 }
 
 /* Container for horizontal scrolling */
 .project-scroll-container {
     display: flex;
     overflow-x: auto; /* Allows horizontal scrolling */
-    gap: 20px; /* Space between items */
+    gap: 90px; /* Space between items */
     padding: 20px;
     scroll-behavior: smooth; /* Smooth scrolling */
     width: 100%; /* Full width */
+    scrollbar-width: thin; /* Firefox scrollbar width */
+    scrollbar-color: #6495ed #f5f5f5; /* Firefox scrollbar color */
 }
 
+/* Custom scrollbar for webkit browsers (Chrome, Safari, Edge) */
+.project-scroll-container::-webkit-scrollbar {
+    height: 8px; /* Scrollbar height for horizontal scrolling */
+}
+
+.project-scroll-container::-webkit-scrollbar-track {
+    background: #f5f5f5; /* Background color of the scrollbar track */
+    border-radius: 10px;
+}
+
+.project-scroll-container::-webkit-scrollbar-thumb {
+    background-color: #6495ed; /* Thumb color */
+    border-radius: 10px;
+    border: 2px solid #f5f5f5; /* Space between thumb and track */
+}
+
+.project-scroll-container::-webkit-scrollbar-thumb:hover {
+    background-color: cornflowerblue; /* Darker color on hover */
+}
+
+/* Individual Project Item */
 .project-item {
     min-width: 300px; /* Minimum width of each project item */
     background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; /* Smoother rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for a softer look */
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.project-item:hover {
+    transform: scale(1.05); /* Slightly enlarges the item on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
 }
 
 .project-item img {
     width: 100%;
     height: auto;
-    border-radius: 5px 5px 0 0; /* Rounded corners on top */
+    border-radius: 10px 10px 0 0; /* Rounded corners on top */
 }
 
+/* Project text styling */
 .project-text {
-    padding: 15px;
+    padding: 20px;
 }
 
 .project-text h3 {
     font-family: "Playfair Display", serif;
     margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #333;
 }
 
 .project-text p {
     font-size: 16px;
-    color: #555;
+    color: #666;
 }
 
 /* Contact Section */
